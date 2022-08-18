@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "fantasy-footbot"
+version = "0.1.0"
+description = ""
+authors = ["Tom Clelford <tfjclelford@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^1.4.3"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^22.6.0", allow-prereleases = true}
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
