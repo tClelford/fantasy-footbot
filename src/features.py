@@ -1,4 +1,5 @@
 import os
+from warnings import WarningMessage
 import pandas as pd
 import re
 THIS_YEAR="2022-23"
@@ -12,8 +13,9 @@ def ewma_understats(player_name: str, weeks:int)-> float:
             continue
         # print("!!!")
         df = pd.read_csv(f"{path}/{f}")
-        ewma = df.ewm(span=10, min_periods=10)
-        print(ewma.var().head())
+        #print(df.head())
+        ewma = df.fillna("ffil").rolling(3).mean()
+        print(ewma.head())
 
 
-ewma_understats("Alex_Iwobi", 10)
+ewma_understats("Gabriel_Jesus", 10)
